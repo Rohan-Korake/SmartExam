@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartExam - Not Updated Yet</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            font-family: 'Nunito', sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            animation: fadeIn 2s ease-in-out;
+            max-width: 90%;
+        }
+
+        /* Default: Desktop View */
+        .desktop-text {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .mobile-text {
+            display: none;
+            font-size: 10rem;
+            line-height: 2.5;/*Spacing between two words*/
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .desktop-text {
+                display: none;
+            }
+            .mobile-text {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-text {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Desktop View -->
+        <h1 class="desktop-text">Not Uploaded Yet!</h1>
+
+        <!-- Mobile View -->
+        <h1 class="mobile-text">
+            Not <br>
+            Uploaded <br>
+            Yet!
+        </h1>
+    </div>
+</body>
+</html>

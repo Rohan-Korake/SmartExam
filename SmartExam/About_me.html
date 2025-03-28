@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartExam - About Me</title>
+    <link rel="icon" type="image/png" href="Icons/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #dcedf8;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #1E3A8A, #3B5998);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+            color: #f4d03f;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .text-section {
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .text-section h1 {
+            text-align: center;
+            color: #1E3A8A;
+        }
+
+        .text-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Profile Image */
+        .image-section {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .footer h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer i {
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .footer i:hover {
+            color: #f4d03f;
+        }
+
+        .icon-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                text-align: center;
+                padding: 15px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav {
+                display: flex;
+                gap: 10px;
+            }
+
+            .container {
+                width: 90%;
+                margin: 30px auto;
+            }
+
+            .text-section {
+                padding: 10px;
+            }
+
+            .footer {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i> SmartExam
+        </div>
+        <div class="nav">
+            <a href="../index.html">Home</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h1>ABOUT ME</h1>
+            <p>Hi, I'm <strong>Rohan Korake</strong>, a Diploma student in Computer Engineering at <strong>L.E.S.P Sangli</strong>.  
+               I created this website to provide previous year practice papers and help students prepare better.  
+               My goal is to make learning easier and more accessible for everyone.</p>
+        </div>
+
+        <div class="image-section">
+            <img src="Icons/Me.jpg" alt="Rohan Korake">
+        </div>
+    </div> 
+    
+    <footer class="footer">
+        <h3> Feedback & Contributions :</h3>
+        <a href="mailto:rohannkorake@gmail.com" class="icon-link">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="https://in.linkedin.com/in/rohan-korake-720848342" class="icon-link">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Rohan-Korake" class="icon-link">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <p> © 2025 SmartExam | Knowledge Without Limits.</p>
+    </footer>
+
+</body>
+</html>

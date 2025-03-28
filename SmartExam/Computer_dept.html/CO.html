@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartExam - CO Department</title>
+    <link rel="icon" type="image/png" href="../Icons/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #dcedf8;
+        }
+
+        .header {
+            background: linear-gradient(to right, #1E3A8A, #3B5998);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a 
+        {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .container 
+        {
+            padding: 20px;
+        }
+
+        h1 
+        {
+            font-family: 'Merriweather', serif; /* Font style */
+            font-size: 28px; /* Adjust size */
+            font-weight: 700; /* Bold text */
+            color: #1E3A8A; /* Font color */
+            text-align: center; /* Text alignment */
+        }
+
+        .button 
+    {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 18px;
+        background-color: #2563EB;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 5px #666;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .button:hover {
+        background-color: DDFF33
+    }
+        
+        .button:active {
+          box-shadow: 0 1pX#666;
+          transform: translateY(4px);
+        }
+    .button a 
+    {
+        text-decoration: none !important;
+        color: white; 
+        display: block;
+    }
+
+    a 
+    {
+        text-decoration: none !important;
+    }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .footer i {
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .icon-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .icon-link:hover {
+            color: lightgray;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 10px;
+            }
+
+            .nav {
+                display: flex;
+                gap: 10px;
+                font-size: 16px;
+            }
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            flex: 0 0 45%; /* Two buttons per row on desktop */
+            max-width: 45%;
+            text-align: center;
+            padding: 15px;
+            background-color: rgb(75, 87, 255);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .button-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            flex: 0 0 90%; /* One button per row on mobile */
+            max-width: 90%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i> SmartExam
+        </div>
+        <div class="nav">
+            <a href="../index.html">Home</a>
+            <a href="../About_me.html">About Me</a>
+        </div>
+    </div>
+    <h1>Welcome to the Computer Engineering Department</h1>
+    <h2>🎓 Select Your Semester</h2>
+    <div class="button-container">
+        <a href="Sem1.html" class="button">Semester 1</a>
+        <a href="Sem2.html" class="button">Semester 2</a>
+        <a href="Sem3.html" class="button">Semester 3</a>
+        <a href="Sem4.html" class="button">Semester 4</a>
+        <a href="Sem5.html" class="button">Semester 5</a>
+        <a href="Sem6.html" class="button">Semester 6</a>
+    </div>
+    <br><br><br>
+    <footer class="footer">
+        <h3 style="margin: 10px;"> Feedback & Contributions :</h3>
+            <a href="mailto:rohannkorake@gmail.com" class="icon-link">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://in.linkedin.com/in/rohan-korake-720848342" class="icon-link">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Rohan-Korake" class="icon-link">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <p style="margin: 10px;"> © 2025 SmartExam | Knowledge Without Limits.</p>
+    </footer>
+</body>
+</html>
