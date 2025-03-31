@@ -3,7 +3,7 @@
 The Diploma Previous Year Practice Paper Website is designed to help diploma students access and practice past exam papers
 
 ## 🚀 Features
-- 📅 Categorized question papers by year and subject
+- 📂 Categorized question papers by year and subject
 - 📄 Downloadable PDFs
 - 📱 Mobile-friendly design
 - 🔓 Free access to all papers
