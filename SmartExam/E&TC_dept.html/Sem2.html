@@ -1,506 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartExam - E&TC Department</title>
-    <link rel="icon" type="image/png" href="../Icons/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="../Icons/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #dcedf8;
-        }
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #dcedf8;
+      }
 
+      .header {
+        background: linear-gradient(to right, #1e3a8a, #3b5998);
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .logo i {
+        margin-right: 8px;
+      }
+
+      .nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .container {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      /*For styling css*/
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 250px;
+      }
+
+      .card h2 {
+        color: #1e3a8a;
+        font-size: 20px;
+      }
+
+      .btn {
+        background: linear-gradient(to right, #007bff, #0056b3);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+      }
+      @media (max-width: 600px) {
         .header {
-            background: linear-gradient(to right, #1E3A8A, #3B5998);
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-            flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 10px;
         }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .logo i {
-            margin-right: 8px;
-        }
-
         .nav {
-            display: flex;
-            gap: 15px;
+          display: flex;
+          gap: 10px;
+          font-size: 16px;
         }
+      }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-        
-        .container {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        /*For styling css*/
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 250px;
-        }
+      .btn:hover {
+        background: linear-gradient(to right, #0056b3, #003d80);
+        transform: scale(1.05);
+      }
 
-        .card h2 {
-            color: #1E3A8A;
-            font-size: 20px;
-        }
+      .content-section {
+        margin-bottom: 60px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
 
-        .btn {
-            background: linear-gradient(to right, #007bff, #0056b3);
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
-        }
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: left;
+        padding: 10px 0;
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+      }
 
-        .btn:hover {
-            background: linear-gradient(to right, #0056b3, #003d80);
-            transform: scale(1.05);
-        }
+      .footer i {
+        margin: 0 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
 
-        .content-section {
-            margin-bottom: 60px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            text-align: left;
-        }
+      .icon-link {
+        color: white;
+        text-decoration: none;
+      }
 
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: left;
-            padding: 10px 0;
-            width: 100%;
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .footer i {
-            margin: 0 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .icon-link {
-            color: white;
-            text-decoration: none;
-        }
-
-        .icon-link:hover {
-            color: lightgray;
-        }
+      .icon-link:hover {
+        color: lightgray;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <div class="logo">
-            <i class="fa-solid fa-book-open"></i> SmartExam
-        </div>
-        <div class="nav">
-            <a href="../index.html">Home</a>
-            <a href="../About_me.html">About Me</a>
-        </div>
+      <div class="logo"><i class="fa-solid fa-book-open"></i> SmartExam</div>
+      <div class="nav">
+        <a href="../index.html">Home</a>
+      </div>
     </div>
     <h1>All the Best for Your Semester 2 Exams!</h1>
     <h2>Subject-wise Practice Papers</h2>
     <div class="container">
-        <div class="card">
-            <h2>AMS (312301)</h2>
-            <a href="#AMS">
-                <button class="btn">PAPERS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>AMS (312301)</h2>
+        <a href="#AMS">
+          <button class="btn">PAPERS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>BEL (312314)</h2>
-            <a href="#BEL">
-                <button class="btn">PAPERS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>BEL (312314)</h2>
+        <a href="#BEL">
+          <button class="btn">PAPERS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>EEE (312315)</h2>
-            <a href="#EEE">
-                <button class="btn">PAPERS</button>
-            </a>
-        </div>
-        <div class="card">
-            <h2>EMC (312316)</h2>
-            <a href="#EMC">
-                <button class="btn">PAPERS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>EEE (312315)</h2>
+        <a href="#EEE">
+          <button class="btn">PAPERS</button>
+        </a>
+      </div>
+      <div class="card">
+        <h2>EMC (312316)</h2>
+        <a href="#EMC">
+          <button class="btn">PAPERS</button>
+        </a>
+      </div>
     </div>
-    <hr><hr>
+    <hr />
+    <hr />
     <h2>Subject-wise Syllabus</h2>
     <div class="container">
-        <div class="card">
-            <h2>AMS (312301)</h2>
-            <a href="https://drive.google.com/file/d/1O-ZmvU3AwnZwG2eDWYfOmrVZ0eagbmlS/view?usp=drive_link">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
-        
-        <div class="card">
-            <h2>BEL (312314)</h2>
-            <a href="https://drive.google.com/file/d/138k_NfQc4zBuMRE9_OM0b7ivMxVtKlhv/view?usp=sharing">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>AMS (312301)</h2>
+        <a
+          href="https://drive.google.com/file/d/1O-ZmvU3AwnZwG2eDWYfOmrVZ0eagbmlS/view?usp=drive_link"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>EEE (312315)</h2>
-            <a href="https://drive.google.com/file/d/1ONsERURKAeFIJ0kcyyCOKh7Uo5COoO-_/view?usp=sharing">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>BEL (312314)</h2>
+        <a
+          href="https://drive.google.com/file/d/138k_NfQc4zBuMRE9_OM0b7ivMxVtKlhv/view?usp=sharing"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>EMC (312316)</h2>
-            <a href="https://drive.google.com/file/d/1_PjvzotYhQFvkQz_OyrEcj6uh_iHLeIE/view?usp=sharing">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>EEE (312315)</h2>
+        <a
+          href="https://drive.google.com/file/d/1ONsERURKAeFIJ0kcyyCOKh7Uo5COoO-_/view?usp=sharing"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>PCO (312002)</h2>
-            <a href="https://drive.google.com/file/d/1g_H0xu5-1nkgSBB9qO18ErjpCQ3IOWtu/view?usp=drive_link">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>EMC (312316)</h2>
+        <a
+          href="https://drive.google.com/file/d/1_PjvzotYhQFvkQz_OyrEcj6uh_iHLeIE/view?usp=sharing"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>SFS (312003)</h2>
-            <a href="https://drive.google.com/file/d/180_4DLJ90paDNzI2feyVKptJm0yXzrC2/view?usp=drive_link">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>PCO (312002)</h2>
+        <a
+          href="https://drive.google.com/file/d/1g_H0xu5-1nkgSBB9qO18ErjpCQ3IOWtu/view?usp=drive_link"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>EWP (312008)</h2>
-            <a href="https://drive.google.com/file/d/1C_NymwgHVQq_AswVnhWcdSYjDB8kV1HP/view?usp=sharing">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>SFS (312003)</h2>
+        <a
+          href="https://drive.google.com/file/d/180_4DLJ90paDNzI2feyVKptJm0yXzrC2/view?usp=drive_link"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
 
-        <div class="card">
-            <h2>CPR (312009)</h2>
-            <a href="https://drive.google.com/file/d/17IQudSOLYU_W0zxGmv7g8zp2JcF8quDZ/view?usp=sharing">
-                <button class="btn">SYLLABUS</button>
-            </a>
-        </div>
+      <div class="card">
+        <h2>EWP (312008)</h2>
+        <a
+          href="https://drive.google.com/file/d/1C_NymwgHVQq_AswVnhWcdSYjDB8kV1HP/view?usp=sharing"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
+
+      <div class="card">
+        <h2>CPR (312009)</h2>
+        <a
+          href="https://drive.google.com/file/d/17IQudSOLYU_W0zxGmv7g8zp2JcF8quDZ/view?usp=sharing"
+        >
+          <button class="btn">SYLLABUS</button>
+        </a>
+      </div>
     </div>
-    <hr><hr>
+    <hr />
+    <hr />
     <div id="AMS" class="content-section">
-        <h2 style="text-align: center;">AMS Practice Papers</h2>
-        <h3>I Scheme Model Question Paper</h3>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1xUblWepI9KdHLtSTE_EjVADmF6y-Z3zF/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2024-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/145lyK2pInliYaBip4tTwA16XkSJZhPPo/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2023-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1wR3t5MEwh2FeHeq4N0-5ymG9q-p240TY/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2023-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/17gvlDHimkqI3I0j04k0909ypEKSXv-OI/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2022-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1USW6CBXrcdB8cR_ggdba89ZjFLt6xiAL/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2019-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1zOZrFLzGAZ1hr95Wj8xjpQA1N5DLVFEc/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2019-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1xu2y4bbrzd-rHfEMmwzd9xw1HJDw6IXk/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2018-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1FFk66VkfmQCkaYtBPTolgAme0u5fIMNC/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2018-Summer-question-paper
-                </a>
-            </div>
-    
-        <h3>I Scheme Model Answer Paper</h3> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1Npaqt1xttHTLoZKPfRrBllh77QMq3VAi/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2022-Summer-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1oiZiDhIG0zTFLXIm3i5lHqT5byTyMe9k/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2019-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1J1zx1xX15UkUrDnxC3afsiWszi5_28Qe/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2019-Summer-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1xbN1CiZUb1odWQ2ZsdsUwg8PtfOJHgQM/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2018-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1AfqAN7ep8FRTyn4wadc9vnMlkf2DZ-kd/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22224-2018-Summer-model-answer-paper
-                </a>
-            </div>
-    </div>
-    
-    <div id="BEL" class="content-section">
-        <h2 style="text-align: center;">BEL Practice Papers</h2>
-        <h3>I Scheme Model Question Paper</h3>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1y4VzF8Ej2NPmE-FohGsdWRfQSk1_hK4Y/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2024-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1jPd-K6nj553u0Bel2r_rx5wm-6Pcmpvp/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2023-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1PbbyyzjOCFtyqjHTY-CWMDz1zBie_ELy/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2023-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1hOQ0EemA1zbd-hEejLFoIwvtuY7Glu9G/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2022-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1a0tBP4pR_HC2s132iWz3oqffiN4ItQ71/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/10xvah3R81OfA1NR1kPeP-MuxN3fon0tY/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1-P5zaqR4L3ZIxzDB2Ohb4D2PIPitpWPr/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1OYlQpTBTpVSY92q2R5esgWoGf6ajouor/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Summer-question-paper
-                </a>
-            </div>
-            
-        <h3>I Scheme Model Answer Paper</h3> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1mRHm-AdAsH0eTiijeSQ3A7-U45nGbxsD/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1ExyFhO1K3ICGzmZx-dUuNQR1_6Qx-_Kg/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1nGjMF9ZPiu3MTLAFhAF6gY8xSVtUwQDh/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Summer-model-answer-paper
-                </a>
-            </div>
-    </div>
-    
-    <div id="EEE" class="content-section">
-        <h2 style="text-align: center;">EEE Practice Papers</h2>
-        <h3>I Scheme Model Question Paper</h3>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1QzF_ExSLLdhl4nunkmTRCFQjj4cLlZUV/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2024-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1f_HmxIRbNo-_05YY6LQNw-_YNEYXXBKD/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2023-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1go3NYP3cT1kqMhGmqdMl6i4OnQzDZF8X/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2023-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1epYdb71ycBYY62s7aeGfoisjlvvIsHq0/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2022-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1IRjpx3QTBruLuEDqlDavckNPlr1Zn252/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1OBgHCFSOrGN_P1DQspyCnEJocZZjdI92/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Summer-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1mwOlGHyuiaHT1Rqd93yT8X-l8347d7ji/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Winter-question-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1E7-Xym2kgqfRloWX86BSRQgxQz62rCCg/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Summer-question-paper
-                </a>
-            </div>
+      <h2 style="text-align: center">AMS Practice Papers</h2>
+      <h3>I Scheme Model Question Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1xUblWepI9KdHLtSTE_EjVADmF6y-Z3zF/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2024-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/145lyK2pInliYaBip4tTwA16XkSJZhPPo/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2023-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1wR3t5MEwh2FeHeq4N0-5ymG9q-p240TY/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2023-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/17gvlDHimkqI3I0j04k0909ypEKSXv-OI/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2022-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1USW6CBXrcdB8cR_ggdba89ZjFLt6xiAL/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2019-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1zOZrFLzGAZ1hr95Wj8xjpQA1N5DLVFEc/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2019-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1xu2y4bbrzd-rHfEMmwzd9xw1HJDw6IXk/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2018-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1FFk66VkfmQCkaYtBPTolgAme0u5fIMNC/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2018-Summer-question-paper
+        </a>
+      </div>
 
-        <h3>I Scheme Model Answer Paper</h3> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1eZPdgXWKkwMEJrByGJQBDBltQEejwRbo/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2019-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/13-X2SvEUwFFvF5WAqbggTYf2BnaQfTE7/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Winter-model-answer-paper
-                </a>
-            </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1ygCq15FV2RVN2hmw38HRn0bgiCd6lHoW/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    22216-2018-Summer-model-answer-paper
-                </a>
-            </div>
+      <h3>I Scheme Model Answer Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1Npaqt1xttHTLoZKPfRrBllh77QMq3VAi/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2022-Summer-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1oiZiDhIG0zTFLXIm3i5lHqT5byTyMe9k/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2019-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1J1zx1xX15UkUrDnxC3afsiWszi5_28Qe/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2019-Summer-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1xbN1CiZUb1odWQ2ZsdsUwg8PtfOJHgQM/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2018-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1AfqAN7ep8FRTyn4wadc9vnMlkf2DZ-kd/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22224-2018-Summer-model-answer-paper
+        </a>
+      </div>
     </div>
-    
+
+    <div id="BEL" class="content-section">
+      <h2 style="text-align: center">BEL Practice Papers</h2>
+      <h3>I Scheme Model Question Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1y4VzF8Ej2NPmE-FohGsdWRfQSk1_hK4Y/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2024-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1jPd-K6nj553u0Bel2r_rx5wm-6Pcmpvp/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2023-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1PbbyyzjOCFtyqjHTY-CWMDz1zBie_ELy/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2023-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1hOQ0EemA1zbd-hEejLFoIwvtuY7Glu9G/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2022-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1a0tBP4pR_HC2s132iWz3oqffiN4ItQ71/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/10xvah3R81OfA1NR1kPeP-MuxN3fon0tY/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1-P5zaqR4L3ZIxzDB2Ohb4D2PIPitpWPr/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1OYlQpTBTpVSY92q2R5esgWoGf6ajouor/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Summer-question-paper
+        </a>
+      </div>
+
+      <h3>I Scheme Model Answer Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1mRHm-AdAsH0eTiijeSQ3A7-U45nGbxsD/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1ExyFhO1K3ICGzmZx-dUuNQR1_6Qx-_Kg/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1nGjMF9ZPiu3MTLAFhAF6gY8xSVtUwQDh/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Summer-model-answer-paper
+        </a>
+      </div>
+    </div>
+
+    <div id="EEE" class="content-section">
+      <h2 style="text-align: center">EEE Practice Papers</h2>
+      <h3>I Scheme Model Question Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1QzF_ExSLLdhl4nunkmTRCFQjj4cLlZUV/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2024-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1f_HmxIRbNo-_05YY6LQNw-_YNEYXXBKD/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2023-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1go3NYP3cT1kqMhGmqdMl6i4OnQzDZF8X/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2023-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1epYdb71ycBYY62s7aeGfoisjlvvIsHq0/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2022-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1IRjpx3QTBruLuEDqlDavckNPlr1Zn252/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1OBgHCFSOrGN_P1DQspyCnEJocZZjdI92/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Summer-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1mwOlGHyuiaHT1Rqd93yT8X-l8347d7ji/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Winter-question-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1E7-Xym2kgqfRloWX86BSRQgxQz62rCCg/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Summer-question-paper
+        </a>
+      </div>
+
+      <h3>I Scheme Model Answer Paper</h3>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1eZPdgXWKkwMEJrByGJQBDBltQEejwRbo/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2019-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/13-X2SvEUwFFvF5WAqbggTYf2BnaQfTE7/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Winter-model-answer-paper
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1ygCq15FV2RVN2hmw38HRn0bgiCd6lHoW/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          22216-2018-Summer-model-answer-paper
+        </a>
+      </div>
+    </div>
+
     <div id="EMC" class="content-section">
-        <h2 style="text-align: center;">EMC Practice MCQ</h2>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1AMRMZhy31QNjyaQb_-VcqkMH6mUSw7Xj/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    MCQs for Unit 01
-                </a>
-            </div> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1_P1OqRtFN6_uSSQXeYd90LQ4jpSJbf8z/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    MCQs for Unit 02
-                </a>
-            </div> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1HUn2cQ1f-8nGDOuVR0_KEziSLYPFVFl_/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    MCQs for Unit 03
-                </a>
-            </div> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/1QT9_zBx0QvCwXvz2IZIWn8IHmL-IgOvq/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    MCQs for Unit 04
-                </a>
-            </div> 
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <a href="https://drive.google.com/file/d/14x7I_WhWc_Yv9IbphIUZEtb3ZI7Q-5mF/view?usp=drive_link" target="_blank" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="../Icons/Paper_logo.png" alt="Icon" width="30" style="margin-right: 5px;">
-                    MCQs for Unit 05
-                </a>
-            </div> 
+      <h2 style="text-align: center">EMC Practice MCQ</h2>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1AMRMZhy31QNjyaQb_-VcqkMH6mUSw7Xj/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          MCQs for Unit 01
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1_P1OqRtFN6_uSSQXeYd90LQ4jpSJbf8z/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          MCQs for Unit 02
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1HUn2cQ1f-8nGDOuVR0_KEziSLYPFVFl_/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          MCQs for Unit 03
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/1QT9_zBx0QvCwXvz2IZIWn8IHmL-IgOvq/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          MCQs for Unit 04
+        </a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 5px">
+        <a
+          href="https://drive.google.com/file/d/14x7I_WhWc_Yv9IbphIUZEtb3ZI7Q-5mF/view?usp=drive_link"
+          target="_blank"
+          style="
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+          <img
+            src="../Icons/Paper_logo.png"
+            alt="Icon"
+            width="30"
+            style="margin-right: 5px"
+          />
+          MCQs for Unit 05
+        </a>
+      </div>
     </div>
 
     <footer class="footer">
-        <h3 style="margin: 10px;"> Feedback & Contributions :</h3>
-        <a href="mailto:rohannkorake@gmail.com" class="icon-link">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://in.linkedin.com/in/rohan-korake-720848342" class="icon-link">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/Rohan-Korake" class="icon-link">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <p style="margin: 10px;"> © 2025 SmartExam | Knowledge Without Limits.</p>
+      <h3 style="margin: 10px">Feedback & Contributions :</h3>
+      <a href="mailto:rohannkorake@gmail.com" class="icon-link">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a
+        href="https://in.linkedin.com/in/rohan-korake-720848342"
+        class="icon-link"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/Rohan-Korake" class="icon-link">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <p style="margin: 10px">© 2025 SmartExam | Knowledge Without Limits.</p>
     </footer>
-</body>
+  </body>
 </html>
