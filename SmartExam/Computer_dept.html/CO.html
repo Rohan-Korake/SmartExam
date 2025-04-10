@@ -175,9 +175,10 @@
     <div class="header">
       <div class="logo"><i class="fa-solid fa-book-open"></i> SmartExam</div>
       <div class="dropdown">
-        <select>
-          <option>Volvo</option>
-          <option>Saab</option>
+        <select onchange="location = this.value;">
+          <option selected disabled>Select Page</option>
+          <option value="/index.html">Home</option>
+          <option value="/About_me.html">About me</option>
         </select>
       </div>
     </div>
