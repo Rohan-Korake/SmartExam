@@ -1,184 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartExam - Home</title>
-    <link rel="icon" type="image/png" href="Icons/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="Icons/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #dcedf8;
-        }
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #dcedf8;
+      }
 
+      .header {
+        background: linear-gradient(to right, #1e3a8a, #3b5998);
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        font-family: "Merriweather", serif; /* Font style */
+        font-size: 28px; /* Adjust size */
+        font-weight: 700; /* Bold text */
+        color: #1e3a8a; /* Font color */
+        text-align: center; /* Text alignment */
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .logo i {
+        margin-right: 8px;
+      }
+
+      .nav {
+        display: flex;
+        gap: 15px;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .button {
+        display: block;
+        width: 80%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 14px;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        box-shadow: 0 5px #666;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: DDFF33;
+      }
+
+      .button:active {
+        box-shadow: 0 1pX#666;
+        transform: translateY(4px);
+      }
+
+      .button a {
+        text-decoration: none !important;
+        color: white;
+        display: block;
+      }
+
+      a {
+        text-decoration: none !important;
+      }
+
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: left;
+        padding: 10px 0;
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .footer i {
+        margin: 0 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .icon-link {
+        color: white;
+        text-decoration: none;
+      }
+
+      .icon-link:hover {
+        color: lightgray;
+      }
+
+      @media (max-width: 600px) {
         .header {
-            background: linear-gradient(to right, #1E3A8A, #3B5998);
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 60px;
-            flex-wrap: wrap;
-        }
-
-        h1 
-        {
-            font-family: 'Merriweather', serif; /* Font style */
-            font-size: 28px; /* Adjust size */
-            font-weight: 700; /* Bold text */
-            color: #1E3A8A; /* Font color */
-            text-align: center; /* Text alignment */
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .logo i {
-            margin-right: 8px;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 10px;
         }
 
         .nav {
-            display: flex;
-            gap: 15px;
+          display: flex;
+          gap: 10px;
+          font-size: 16px;
         }
-
-        .nav a 
-        {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .container 
-        {
-            padding: 20px;
-        }
-
-        .button 
-        {
-            display: block;
-            width: 80%;
-            max-width: 300px;
-            margin: 20px auto;
-            padding: 15px;
-            font-size: 14px;
-            background-color: #2563EB;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            box-shadow: 0 5px #666;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: DDFF33
-        }
-        
-        .button:active {
-          box-shadow: 0 1pX#666;
-          transform: translateY(4px);
-        }
-
-        .button a 
-        {
-            text-decoration: none !important;
-            color: white; 
-            display: block;
-        }
-
-        a 
-        {
-            text-decoration: none !important;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: left;
-            padding: 10px 0;
-            width: 100%;
-            position: relative;
-            margin-top: 20px;
-        }
-
-        .footer i {
-            margin: 0 10px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .icon-link {
-            color: white;
-            text-decoration: none;
-        }
-
-        .icon-link:hover {
-            color: lightgray;
-        }
-
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 10px;
-            }
-
-            .nav {
-                display: flex;
-                gap: 10px;
-                font-size: 16px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <div class="logo">
-            <i class="fa-solid fa-book-open"></i> SmartExam
-        </div>
-        <div class="nav">
-            <a href="About_me.html">About Me</a>
-        </div>
-    </div> 
+      <div class="logo"><i class="fa-solid fa-book-open"></i> SmartExam</div>
+      <div class="nav">
+        <a href="About_me.html">About Me</a>
+      </div>
+    </div>
 
     <div class="container">
-        <h1>📚 Welcome to SmartExam!</h1>
-        <h1>"Success Starts with Preparation & Practice Makes Progress!"</h1>
-        <h2>Choose Your Engineering Stream</h2>
-        <a href="Computer_dept.html/CO.html" class="button">COMPUTER ENGINEERING</a>
-        <a href="Civil_dept.html/CE.html" class="button">CIVIL ENGINEERING</a>
-        <a href="Electrical_dept.html/EE.html" class="button">ELECTRICAL ENGINEERING</a>
-        <a href="E&TC_dept.html/EJ.html" class="button">E&TC ENGINEERING</a>
-        <a href="Mechanical_dept.html/ME.html" class="button">MECHANICAL ENGINEERING</a>
+      <h1>📚 Welcome to SmartExam!</h1>
+      <h1>"Success Starts with Preparation & Practice Makes Progress!"</h1>
+      <h2>Choose Your Engineering Stream</h2>
+      <a href="Computer_dept.html/CO.html" class="button"
+        >COMPUTER ENGINEERING</a
+      >
+      <a href="Civil_dept.html/CE.html" class="button">CIVIL ENGINEERING</a>
+      <a href="Electrical_dept.html/EE.html" class="button"
+        >ELECTRICAL ENGINEERING</a
+      >
+      <a href="E&TC_dept.html/EJ.html" class="button">E&TC ENGINEERING</a>
+      <a href="Mechanical_dept.html/ME.html" class="button"
+        >MECHANICAL ENGINEERING</a
+      >
     </div>
 
     <footer class="footer">
-        <h3 style="margin: 10px;"> Feedback & Contributions :</h3>
-            <a href="mailto:rohannkorake@gmail.com" class="icon-link">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="https://in.linkedin.com/in/rohan-korake-720848342" class="icon-link">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Rohan-Korake" class="icon-link">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <p style="margin: 10px;"> © 2025 SmartExam | Knowledge Without Limits.</p>
+      <h3 style="margin: 10px">Feedback & Contributions :</h3>
+      <a href="mailto:rohannkorake@gmail.com" class="icon-link">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a
+        href="https://in.linkedin.com/in/rohan-korake-720848342"
+        class="icon-link"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/Rohan-Korake" class="icon-link">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <p style="font-size: 18px">© 2025 SmartExam | Smart Learning.</p>
     </footer>
-</body>
+  </body>
 </html>
-
