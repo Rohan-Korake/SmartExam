@@ -10,6 +10,7 @@ The Diploma Previous Year Practice Paper Website is designed to help diploma stu
 
 ##  💻 Technologies Used
 - HTML
+- CSS
 
 ## 🛠️ Installation Guide
 1. Clone smartexam repository :
