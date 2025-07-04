@@ -8,6 +8,10 @@ The Diploma Previous Year Practice Paper Website is designed to help diploma stu
 - 📱 Mobile-friendly design
 - 🔓 Free access to all papers
 
+## 🚀 New in v2.0
+- 🔥 Added animated buttons and loader
+- 🌈 Gradient support added
+- 📋 One-click copy for all buttons
 ##  💻 Technologies Used
 - HTML
 - CSS
