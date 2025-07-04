@@ -10,8 +10,9 @@ The Diploma Previous Year Practice Paper Website is designed to help diploma stu
 
 ## 🚀 New in v2.0
 - 🔥 Added animated buttons and loader
-- 🌈 Gradient support added
-- 📋 One-click copy for all buttons
+- 🌈 Gradient usage
+- 📄 PDF download icon added
+  
 ##  💻 Technologies Used
 - HTML
 - CSS
