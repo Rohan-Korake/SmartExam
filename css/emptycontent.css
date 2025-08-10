@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    color: white;
+    width: auto;
+    animation: notupload 2s 1 ease;
+    font-size: 50px;
+}
+
+.notupoaded {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes notupload {
+    0% {
+        font-size: 10px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
