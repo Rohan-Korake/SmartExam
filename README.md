@@ -1,4 +1,4 @@
-![Logo](SmartExam/icons/logo.png)
+![Logo](icons/logo.png)
 # SmartExam v2!
 The Diploma Previous Year Practice Paper Website is designed to help diploma students access and practice past exam papers
 
