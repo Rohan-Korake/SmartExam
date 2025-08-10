@@ -18,7 +18,7 @@
   content: url("../icons/pdf.png");
   display: inline-flex;
   width: 30px;
-  height: 30px;
+  height: auto;
   margin-right: 16px;
 }
 
